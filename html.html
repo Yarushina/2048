@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link href="static/style.css" rel="stylesheet">
+  <style>
+.snowman {
+    background: transparent url("https://mojwp.ru/wp-content/themes/mojwpthemes/images/snowman.png") no-repeat scroll right top / 80px auto;
+    bottom: 0;
+    display: block;
+    height: 110px;
+    position: fixed;
+    right: 2%;
+    width: 100px;
+    z-index: 3;
+}
+.snow-layer {
+    background: transparent url("https://mojwp.ru/wp-content/themes/mojwpthemes/images/snow-layer.png") repeat-x scroll center top / auto 20px;
+    bottom: 0;
+    display: block;
+    height: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+@media screen and (max-width: 1024px){
+	.snowman, .snow-layer {display: none;}
+}
+  </style>
+  <title>2048</title>
+</head>
+<body>
+  <h1>2048</h1>
+  <p id="score"></p>
+  <div id="size-bloc">
+    <p id="size-title">Размер полей: </p>
+    <input id="size" type="number" value="4">
+    <input id="change-size" type="button" value="Тык">
+    <div class="clear"></div>
+  </div>
+  <div id="canvas-block">
+    <canvas id="canvas" width="500" height="500"></canvas>
+  </div>
+  <script src="static/script.js"></script>
+  
+<span class="snowman"></span>
+<span class="snow-layer"></span>
+ <script src="snowfall.jquery.min.js"></script>
+<script>
+
+	$(document).ready(function() {
+
+		document.body.className  = "darkBg";
+
+		$(document).snowfall({
+			flakeCount: 200 // Количество снежинок
+		});
+
+	});
+
+</script>
+</body>
+</html>
